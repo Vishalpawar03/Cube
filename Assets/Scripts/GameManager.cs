@@ -1,12 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     [SerializeField] Material cubeMaterial;
-    [SerializeField] Sprite[] sprites;
     [SerializeField] GameObject panel;
     [SerializeField] Button deactivateButton;
 
@@ -14,21 +11,6 @@ public class GameManager : MonoBehaviour
     {
         panel.SetActive(false);
         deactivateButton.gameObject.SetActive(false);
-    }
-
-    public void ChangeToPatrick1()
-    {
-        ChangeTexture(0);
-    }
-
-    public void ChangeToPatrick2()
-    {
-        ChangeTexture(1);
-    }
-
-    public void ChangeToPatrick3()
-    {
-        ChangeTexture(2);
     }
 
     public void ActivatePanel()
@@ -43,8 +25,8 @@ public class GameManager : MonoBehaviour
         deactivateButton.gameObject.SetActive(false);
     }
 
-    void ChangeTexture(int index)
+    public void CubeMaterial(Sprite materialSprite)
     {
-        cubeMaterial.mainTexture = sprites[index].texture;
+        cubeMaterial.mainTexture = materialSprite.texture;
     }
 }
